@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BioRec - Empleados", "BioRec - Empleados\BioRec - Empleados.csproj", "{DB6290DA-601B-48FC-994D-9251B6B5A099}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB6290DA-601B-48FC-994D-9251B6B5A099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB6290DA-601B-48FC-994D-9251B6B5A099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB6290DA-601B-48FC-994D-9251B6B5A099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB6290DA-601B-48FC-994D-9251B6B5A099}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA286EE1-E75A-4796-9CB5-F93945CFF502}
+	EndGlobalSection
+EndGlobal

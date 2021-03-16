@@ -1,0 +1,128 @@
+﻿@model BioRec___Empleados.ViewModel.RegistroUsuarioViewModel
+
+@{
+    ViewData["Title"] = "Registro";
+}
+
+
+<head>
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+    
+</head>
+
+<br />
+<div class="text-center">
+
+    <h1 class="display-1 titulo">Regístrate</h1>
+
+</div>
+<br />
+<br />
+
+<form asp-action="Registrar">
+    <div class="form-group row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+            <input asp-for="nombre" type="text" class="form-control" placeholder="Nombre">
+        </div>
+        <div class="col-md-3">
+            <input asp-for="apellido" type="text" class="form-control" placeholder="Apellido">
+        </div>
+
+
+    </div>
+
+    <div class="form-group row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <input asp-for="correo" type="email" class="form-control" placeholder="Correo Electrónico">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <input asp-for="contraseña" type="password" class="form-control" placeholder="Contraseña">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <label class="control-label font-weight-light"> Fecha de Nacimiento</label>
+            <input asp-for="fechanacimiento" type="date" class="form-control">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-3"></div>
+        <div class="col-6 font-weight-light">Dirección</div>
+
+
+    </div>
+
+    <div class="form-group row">
+        <div class="col-3"></div>
+        <div class="col-2">
+            <input asp-for="tipoVia" type="text" class="form-control" placeholder="Tipo Vía">
+
+        </div>
+        <div class="col-2">
+            <input asp-for="numeroVia" type="text" class="form-control" placeholder="Numero Vía">
+
+        </div>
+        <div>#</div>
+        <div class="col-1">
+            <input asp-for="numeroViaSecundario" type="text" class="form-control">
+
+        </div>
+        <div>-</div>
+        <div class="col-1">
+            <input asp-for="numeroCasa" type="text" class="form-control">
+
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-3"></div>
+        <div class="col-4">
+            <input asp-for="tipoInmueble" type="text" class="form-control" placeholder="Tipo Inmueble">
+
+        </div>
+        <div class="col-2">
+            <input asp-for="numeroInmueble" type="text" class="form-control" placeholder="Número">
+
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        <div class="col-3"></div>
+        <div class="col-2">
+            <input asp-for="ciudad" type="text" class="form-control" placeholder="Ciudad">
+
+        </div>
+        <div class="col-2">
+            <input asp-for="departamento" type="text" class="form-control" placeholder="Departamento">
+
+        </div>
+        <div class="col-2">
+            <input asp-for="pais" type="text" class="form-control" placeholder="País">
+
+        </div>
+
+    </div>
+
+    <br />
+    <br />
+
+    <div class="form-group row">
+        <div class="col-5"></div>
+
+        <button type="submit" class="btn btn-info botonPred">Registrarse</button>
+
+    </div>
+
+
+
+</form>
