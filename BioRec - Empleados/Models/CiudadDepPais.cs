@@ -18,7 +18,10 @@ namespace BioRec___Empleados.Models
         public String ciudad { get; set; }
 
         [InverseProperty("CiudadDepPais")]
-        public virtual Direccion Direccion { get; set; }
+        public virtual Usuario Usuario { get; set; }
+
+        [InverseProperty("CiudadDepPais")]
+        public virtual Proveedor Proveedor { get; set; }
 
         [ForeignKey("Departamento")]
         public int idDepartamento { get; set; }

@@ -26,7 +26,7 @@ namespace BioRec___Empleados.Models
 
         [Required]
         public int edad { get; set; }
-        
+
         [Required]
         public String correo { get; set; }
 
@@ -36,13 +36,28 @@ namespace BioRec___Empleados.Models
         [Required]
         public int rol { get; set; }
 
-        
 
-       
+        //Dirección:
 
-        [ForeignKey("Direccion")]
-        public int idDireccion { get; set; }
-        public virtual Direccion Direccion { get; set; }
+        [Required]
+        public String tipoVia { get; set; }
+
+        [Required]
+        public String numeroVia { get; set; }
+
+        [Required]
+        public String numeroViaSecundario { get; set; }
+
+        [Required]
+        public int numeroCasa { get; set; }
+        public String tipoInmueble { get; set; }
+
+        [ForeignKey("CiudadDepPais")]
+        public int idCiudadDepPais { get; set; }
+        public virtual CiudadDepPais CiudadDepPais { get; set; }
+
+
+
 
         [InverseProperty("Usuario")]
         public virtual ICollection<Venta> Ventas { get; set; }
