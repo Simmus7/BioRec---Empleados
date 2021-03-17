@@ -13,7 +13,7 @@ namespace BioRec___Empleados.Models
         }
 
         public DbSet<Usuario> Usuario { get; set; }
-        public DbSet<Direccion> Direccion { get; set; }
+       
         public DbSet<CiudadDepPais> CiudadDepPais { get; set; }
         public DbSet<Departamento> Departamentos{ get; set; }
         public DbSet<Pais> Pais { get; set; }
