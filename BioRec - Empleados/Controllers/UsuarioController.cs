@@ -45,6 +45,7 @@ namespace BioRec___Empleados.Controllers
                 user.numeroViaSecundario = usuarioCompuesto.numeroViaSecundario;
                 user.numeroCasa = usuarioCompuesto.numeroCasa;
                 user.tipoInmueble = usuarioCompuesto.tipoInmueble;
+                user.tipoInmueble = usuarioCompuesto.numeroInmueble;
 
                 CiudadDepPais ciudad = new CiudadDepPais();
                 ciudad.ciudad = usuarioCompuesto.ciudad;
