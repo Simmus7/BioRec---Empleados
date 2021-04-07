@@ -49,8 +49,10 @@ namespace BioRec___Empleados.Models
         public String numeroViaSecundario { get; set; }
 
         [Required]
-        public int numeroCasa { get; set; }
+        public String numeroCasa { get; set; }
         public String tipoInmueble { get; set; }
+
+        public String numeroInmueble { get; set; }
 
         [ForeignKey("CiudadDepPais")]
         public int idCiudadDepPais { get; set; }
