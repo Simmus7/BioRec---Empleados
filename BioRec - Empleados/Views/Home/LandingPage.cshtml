@@ -7,32 +7,31 @@
 <div class="text-center">
     <br />
     <br />
+
     <br />
     <br />
-    <br />
-    <br />
-   <h1 class="display-1 titulo">Intefaz de Trabajo - BioRec</h1>
+   <h1 class="display-1 titulo">Interfaz de Trabajo - BioRec</h1>
     <br />
     <br />
     <br />
     
 </div>
-
-<div class="form-group row">
-    <div class="col-3"></div>
-    <div class="col-3"> <button class="btn btn-info botonPred">Registra Proveedores</button></div>
-    <div class="col-3"> <button class="btn btn-info botonPred">Registra Productos</button></div>
-
-
-</div>
-<div class="form-group row">
-    <div class="col-3"></div>
-    <div class="col-3"> <button class="btn btn-info botonPred">Registra Inventario</button></div>
-    <div class="col-3"> <button class="btn btn-info botonPred">Observa Ventas</button></div>
+<form>
+    <div class="form-group row">
+        <div class="col-3"></div>
+        <div class="col-3"> <button class="btn btn-info botonPred">Registra Proveedores</button></div>
+        <div class="col-3"> <button asp-controller="Producto" asp-action="IndexProducto" class="btn btn-info botonPred">Control de Productos</button></div>
 
 
-</div>
+    </div>
+    <div class="form-group row">
+        <div class="col-3"></div>
+        <div class="col-3"> <button class="btn btn-info botonPred">Registra Inventario</button></div>
+        <div class="col-3"> <button class="btn btn-info botonPred">Observa Ventas</button></div>
 
+
+    </div>
+</form>
 
 
 
