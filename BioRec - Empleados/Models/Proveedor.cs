@@ -14,8 +14,7 @@ namespace BioRec___Empleados.Models
         public int idProveedor { get; set; }
         [Required]
         public String nombreProveedor { get; set; }
-        [Required]
-        public String direccionBodega { get; set; }
+        
 
         //Dirección:
 

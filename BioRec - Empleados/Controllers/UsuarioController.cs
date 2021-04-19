@@ -55,12 +55,12 @@ namespace BioRec___Empleados.Controllers
 
                 Pais pais = new Pais();
                 pais.pais = usuarioCompuesto.pais;
-
+                
 
                 _context.Pais.Add(pais);
                 await _context.SaveChangesAsync();
                 dep.idPais = pais.idPais;
-
+                
 
                 _context.Departamentos.Add(dep);
                 await _context.SaveChangesAsync();

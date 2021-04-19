@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BioRec___Empleados.Models;
 
 namespace BioRec___Empleados.Models
 {
@@ -19,6 +20,8 @@ namespace BioRec___Empleados.Models
         public DbSet<Pais> Pais { get; set; }
 
         public DbSet<Venta> Venta{ get; set; }
+
+        public DbSet<BioRec___Empleados.Models.Producto> Producto { get; set; }
 
     }
     

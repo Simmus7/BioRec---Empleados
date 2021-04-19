@@ -1,0 +1,49 @@
+﻿@model BioRec___Empleados.Models.Producto
+
+@{
+    ViewData["Title"] = "Registro de producto";
+}
+
+<div class="text-center">
+    <h1 class="display-1 titulo">Registra un producto</h1>
+</div>
+<hr />
+<br />
+
+
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <input asp-for="nombre" class="form-control" placeholder="Nombre del producto" />
+            <span asp-validation-for="nombre" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <textarea asp-for="descripcion" class="form-control" placeholder="Descripción" rows="5"></textarea>
+            <span asp-validation-for="descripcion" class="text-danger"></span>
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <div class="col-3"></div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-block btn-info botonPred">Registrar</button>
+        </div>
+    </div>
+
+</form>
+
+<form>
+    <div class="form-group row">
+        <div class="col-3"></div>
+        <div class="col-md-6">
+            <button asp-action="IndexProducto" class="btn btn-block btn-info botonPred">Volver a la lista</button>
+        </div>
+    </div>
+</form>
