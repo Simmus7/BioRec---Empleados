@@ -7,43 +7,33 @@ using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 namespace BioRec___Empleados.Models
 {
-    [Table("Proveedor")]
-    public class Proveedor
+    public class RegistroProveedorViewModel
     {
+
         [Key]
         public int idProveedor { get; set; }
-        [Required]
+
         public String nombreProveedor { get; set; }
 
 
-        //Dirección:
-
-        [Required]
         public String tipoVia { get; set; }
 
-        [Required]
         public String numeroVia { get; set; }
 
-        [Required]
         public String numeroViaSecundario { get; set; }
 
-        [Required]
         public String numeroCasa { get; set; }
+
         public String tipoInmueble { get; set; }
 
         public String numeroInmueble { get; set; }
 
-        [ForeignKey("CiudadDepPais")]
-        public int idCiudadDepPais { get; set; }
-        public virtual CiudadDepPais CiudadDepPais { get; set; }
+        public String ciudad { get; set; }
 
+        public String departamento { get; set; }
 
+        public String pais { get; set; }
 
-        [InverseProperty("Proveedor")]
-        public virtual Telefono Telefono { get; set; }
-
-        [InverseProperty("Proveedor")]
-        public virtual ICollection<Proveedor_Producto> Proveedor_Producto { get; set; }
 
     }
 }
