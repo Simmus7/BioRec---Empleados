@@ -15,6 +15,7 @@ namespace BioRec___Empleados.Models
         [Required]
         public String nombreProveedor { get; set; }
 
+
         //Dirección:
 
         [Required]

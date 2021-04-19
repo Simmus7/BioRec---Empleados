@@ -1,0 +1,52 @@
+﻿@model BioRec___Empleados.Models.Producto
+
+@{
+    ViewData["Title"] = "Edición de producto";
+}
+
+<div class="text-center">
+    <h1 class="display-1 titulo">Editar producto</h1>
+</div>
+<hr />
+<br />
+<br />
+
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="idProducto" />
+    <div class="form-group row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <input asp-for="nombre" class="form-control" placeholder="Nombre del producto" />
+            <span asp-validation-for="nombre" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <textarea asp-for="descripcion" class="form-control" placeholder="Descripción" rows="5"></textarea>
+            <span asp-validation-for="descripcion" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-3"></div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-block btn-info botonPred">Guardar Cambios</button>
+        </div>
+    </div>
+
+
+
+</form>
+<form>
+    <div class="form-group row">
+        <div class="col-3"></div>
+        <div class="col-md-6">
+            <button asp-action="IndexProducto" class="btn btn-block btn-info botonPred">Volver a la lista</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

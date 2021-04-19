@@ -1,0 +1,61 @@
+﻿@model IEnumerable<BioRec___Empleados.Models.Producto>
+@{
+    ViewData["Title"] = "Productos";
+}
+<head>
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+
+</head>
+<body>
+    <h1>Productos</h1>
+    <p>
+        <a asp-action="Create">Añade un nuevo producto</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                   Nombre
+                </th>
+                <th>
+                   Descripción
+                </th>
+                <th>
+                    Cantidad total
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cantidadTotal)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.idProducto">Editar </a> |
+                        <a asp-action="Details" asp-route-id="@item.idProducto"> Detalles</a> |
+                        <a asp-action="Delete" asp-route-id="@item.idProducto"> Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+</body>
