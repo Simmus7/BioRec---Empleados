@@ -14,6 +14,8 @@ namespace BioRec___Empleados.Models
         public int idProveedor { get; set; }
         [Required]
         public String nombreProveedor { get; set; }
+        [Required]
+        public String telefono { get; set; }
 
 
         //Dirección:
@@ -33,14 +35,12 @@ namespace BioRec___Empleados.Models
 
         public String numeroInmueble { get; set; }
 
+
+
         [ForeignKey("CiudadDepPais")]
         public int idCiudadDepPais { get; set; }
         public virtual CiudadDepPais CiudadDepPais { get; set; }
 
-
-
-        [InverseProperty("Proveedor")]
-        public virtual Telefono Telefono { get; set; }
 
         [InverseProperty("Proveedor")]
         public virtual ICollection<Proveedor_Producto> Proveedor_Producto { get; set; }
