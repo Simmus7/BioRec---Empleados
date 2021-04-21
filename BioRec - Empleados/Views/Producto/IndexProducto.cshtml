@@ -41,6 +41,17 @@
                         @Html.DisplayFor(modelItem => item.cantidadTotal)
                     </td>
                     <td>
+                        @if (item.ProductoPublicado == null){
+                        <div>
+                            <a asp-controller="ProductoPublicadoes" asp-action="Create" asp-route-idProducto="@item.idProducto">Publicar </a> |
+                        </div>
+                        }
+                        else 
+                        {
+                    <div>
+                        <a asp-controller="ProductoPublicadoes" asp-action="Delete" asp-route-id="@item.idProducto">Eliminar publicacion </a> |
+                    </div>
+                        }
                         <a asp-action="Edit" asp-route-id="@item.idProducto">Editar </a> |
                         <a asp-action="Details" asp-route-id="@item.idProducto"> Detalles</a> |
                         <a asp-action="Delete" asp-route-id="@item.idProducto"> Eliminar</a>
