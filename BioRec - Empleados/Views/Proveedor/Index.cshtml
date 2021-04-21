@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<BioRec___Empleados.Models.Proveedor>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Index Proveedores";
 }
 
 <h1>Index</h1>
@@ -25,9 +25,10 @@
                     @Html.DisplayFor(modelItem => item.nombreProveedor)
                 </td>
                 <td></td>
+                <td></td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.idProveedor">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.idProveedor">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@item.idProveedor">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.idProveedor">Detalles</a>
                 </td>
             </tr>
         }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BioRec___Empleados.Models;
+using BioRec___Empleados.ViewModel;
 
 namespace BioRec___Empleados.Models
 {
@@ -24,9 +25,8 @@ namespace BioRec___Empleados.Models
 
         public DbSet<BioRec___Empleados.Models.Proveedor> Proveedor { get; set; }
 
-        public DbSet<BioRec___Empleados.Models.RegistroProveedorViewModel> RegistroProveedorViewModel { get; set; }
-
         public DbSet<BioRec___Empleados.Models.Producto> Producto { get; set; }
+
 
 
     }
