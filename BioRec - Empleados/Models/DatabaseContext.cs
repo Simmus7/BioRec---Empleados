@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +26,10 @@ namespace BioRec___Empleados.Models
         public DbSet<BioRec___Empleados.Models.Proveedor> Proveedor { get; set; }
 
         public DbSet<BioRec___Empleados.Models.Producto> Producto { get; set; }
+
+        public DbSet<BioRec___Empleados.Models.Proveedor_Producto> Proveedor_Producto { get; set; }
+
+        public DbSet<BioRec___Empleados.Models.ProductoPublicado> ProductoPublicado { get; set; }
 
 
 

@@ -18,7 +18,8 @@ namespace BioRec___Empleados.Controllers
         }
         public async Task<IActionResult> IndexProducto()
         {
-            return View(await _context.Producto.ToListAsync());
+            var lista = await _context.Producto.Include(p => p.ProductoPublicado).ToListAsync();
+            return View(lista);
         }
 
         public IActionResult Create()

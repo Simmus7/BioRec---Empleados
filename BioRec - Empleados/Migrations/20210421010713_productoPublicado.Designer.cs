@@ -3,14 +3,16 @@ using System;
 using BioRec___Empleados.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BioRec___Empleados.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20210421010713_productoPublicado")]
+    partial class productoPublicado
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -174,10 +176,6 @@ namespace BioRec___Empleados.Migrations
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<string>("telefono")
-                        .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
                     b.Property<string>("tipoInmueble")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
@@ -222,7 +220,6 @@ namespace BioRec___Empleados.Migrations
 
                     b.ToTable("Proveedor_Producto");
                 });
-
 
             modelBuilder.Entity("BioRec___Empleados.Models.RegistroProveedorViewModel", b =>
                 {
@@ -281,7 +278,6 @@ namespace BioRec___Empleados.Migrations
 
                     b.ToTable("Telefono");
                 });
-
 
             modelBuilder.Entity("BioRec___Empleados.Models.Usuario", b =>
                 {
@@ -428,6 +424,15 @@ namespace BioRec___Empleados.Migrations
                     b.HasOne("BioRec___Empleados.Models.Proveedor", "Proveedor")
                         .WithMany("Proveedor_Producto")
                         .HasForeignKey("idProveedor")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("BioRec___Empleados.Models.Telefono", b =>
+                {
+                    b.HasOne("BioRec___Empleados.Models.Proveedor", "Proveedor")
+                        .WithOne("Telefono")
+                        .HasForeignKey("BioRec___Empleados.Models.Telefono", "idProveedor")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

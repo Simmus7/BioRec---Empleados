@@ -30,6 +30,7 @@ namespace BioRec___Empleados
             var connection = Configuration.GetConnectionString("DatabaseConnection");
             services.AddDbContext<DatabaseContext>(options =>
             options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddControllers(options => options.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +58,17 @@ namespace BioRec___Empleados
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Usuario}/{action=InicioDeSesion}/{id?}");
+            });
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                  name: "areas",
+                  template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
