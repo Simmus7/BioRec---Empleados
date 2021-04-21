@@ -62,7 +62,8 @@ namespace BioRec___Empleados.Controllers
             {
                 _context.Add(productoPublicado);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index",new{idProducto=productoPublicado.id });
+                return RedirectToAction("IndexProducto","Producto",new{idProducto=productoPublicado.id });
+               
             }
             ViewData["id"] = new SelectList(_context.Producto, "idProducto", "descripcion", productoPublicado.id);
             return View(productoPublicado);

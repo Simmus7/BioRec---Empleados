@@ -51,7 +51,7 @@ namespace BioRec___Empleados.Controllers
         [HttpPost]
         public async Task<IActionResult> RegistrarProveedor([Bind("nombreProveedor,telefono,tipoVia,numeroVia,numeroViaSecundario,numeroCasa,tipoInmueble,numeroInmueble,ciudad,departamento,pais")] RegistroProveedorViewModel proveedorCompuesto)
         {
-            if (proveedorCompuesto.nombreProveedor != null || proveedorCompuesto.telefono != null || proveedorCompuesto.tipoVia != null || proveedorCompuesto.numeroVia != null || proveedorCompuesto.numeroViaSecundario != null || proveedorCompuesto.numeroCasa != null || proveedorCompuesto.tipoInmueble != null || proveedorCompuesto.numeroInmueble != null || proveedorCompuesto.ciudad != null || proveedorCompuesto.departamento != null || proveedorCompuesto.pais != null)
+            if (proveedorCompuesto.nombreProveedor != null && proveedorCompuesto.telefono != null && proveedorCompuesto.tipoVia != null && proveedorCompuesto.numeroVia != null && proveedorCompuesto.numeroViaSecundario != null && proveedorCompuesto.numeroCasa != null && proveedorCompuesto.tipoInmueble != null && proveedorCompuesto.numeroInmueble != null && proveedorCompuesto.ciudad != null && proveedorCompuesto.departamento != null && proveedorCompuesto.pais != null)
             {
 
                 if (ModelState.IsValid)
@@ -97,7 +97,7 @@ namespace BioRec___Empleados.Controllers
                     return RedirectToAction(nameof(Index));
                 }
             }
-            return RedirectToAction("Create", "Proveedor");
+            return View("Create", proveedorCompuesto);
         }
 
         public async Task<IActionResult> Edit(int? id)

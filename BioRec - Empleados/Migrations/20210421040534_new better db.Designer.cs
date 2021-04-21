@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BioRec___Empleados.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20210421004111_Borrar Telefonos")]
-    partial class BorrarTelefonos
+    [Migration("20210421040534_new better db")]
+    partial class newbetterdb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -98,6 +98,26 @@ namespace BioRec___Empleados.Migrations
                     b.ToTable("Producto");
                 });
 
+            modelBuilder.Entity("BioRec___Empleados.Models.ProductoPublicado", b =>
+                {
+                    b.Property<int>("id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("descripcion")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("nombre")
+                        .IsRequired()
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<double>("precio")
+                        .HasColumnType("double");
+
+                    b.HasKey("id");
+
+                    b.ToTable("ProductoPublicado");
+                });
+
             modelBuilder.Entity("BioRec___Empleados.Models.Producto_Venta", b =>
                 {
                     b.Property<int>("idProducto_Venta")
@@ -153,6 +173,10 @@ namespace BioRec___Empleados.Migrations
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("numeroViaSecundario")
+                        .IsRequired()
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("telefono")
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
@@ -298,6 +322,15 @@ namespace BioRec___Empleados.Migrations
                     b.HasOne("BioRec___Empleados.Models.Pais", "Pais")
                         .WithOne("Departamento")
                         .HasForeignKey("BioRec___Empleados.Models.Departamento", "idPais")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("BioRec___Empleados.Models.ProductoPublicado", b =>
+                {
+                    b.HasOne("BioRec___Empleados.Models.Producto", "Producto")
+                        .WithOne("ProductoPublicado")
+                        .HasForeignKey("BioRec___Empleados.Models.ProductoPublicado", "id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
