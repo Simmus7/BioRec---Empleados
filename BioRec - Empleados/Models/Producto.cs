@@ -27,5 +27,7 @@ namespace BioRec___Empleados.Models
 
         [InverseProperty("Producto")]
         public virtual ICollection<Proveedor_Producto> Proveedor_Producto{ get; set; }
+        [InverseProperty("Producto")]
+        public virtual ProductoPublicado ProductoPublicado { get; set; }
     }
 }

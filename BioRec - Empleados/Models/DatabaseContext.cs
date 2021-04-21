@@ -30,6 +30,8 @@ namespace BioRec___Empleados.Models
 
         public DbSet<BioRec___Empleados.Models.Proveedor_Producto> Proveedor_Producto { get; set; }
 
+        public DbSet<BioRec___Empleados.Models.ProductoPublicado> ProductoPublicado { get; set; }
+
 
     }
     
