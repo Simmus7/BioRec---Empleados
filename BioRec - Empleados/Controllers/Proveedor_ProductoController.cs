@@ -63,6 +63,9 @@ namespace BioRec___Empleados.Areas.Abastecimiento.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(proveedor_Producto);
+                var producto = _context.Producto.Find(proveedor_Producto.idProducto);
+                producto.cantidadTotal += proveedor_Producto.cantidadTotal;
+                _context.Update(producto);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
