@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BioRec___Empleados.Migrations
 {
-    public partial class newdb : Migration
+    public partial class newbetterdb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -57,6 +57,26 @@ namespace BioRec___Empleados.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ProductoPublicado",
+                columns: table => new
+                {
+                    id = table.Column<int>(nullable: false),
+                    nombre = table.Column<string>(nullable: false),
+                    descripcion = table.Column<string>(nullable: true),
+                    precio = table.Column<double>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductoPublicado", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_ProductoPublicado_Producto_id",
+                        column: x => x.id,
+                        principalTable: "Producto",
+                        principalColumn: "idProducto",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "CiudadDepPais",
                 columns: table => new
                 {
@@ -83,7 +103,7 @@ namespace BioRec___Empleados.Migrations
                     idProveedor = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     nombreProveedor = table.Column<string>(nullable: false),
-                    direccionBodega = table.Column<string>(nullable: false),
+                    telefono = table.Column<string>(nullable: false),
                     tipoVia = table.Column<string>(nullable: false),
                     numeroVia = table.Column<string>(nullable: false),
                     numeroViaSecundario = table.Column<string>(nullable: false),
@@ -158,25 +178,6 @@ namespace BioRec___Empleados.Migrations
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Proveedor_Producto_Proveedor_idProveedor",
-                        column: x => x.idProveedor,
-                        principalTable: "Proveedor",
-                        principalColumn: "idProveedor",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Telefono",
-                columns: table => new
-                {
-                    idTelefono = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    idProveedor = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Telefono", x => x.idTelefono);
-                    table.ForeignKey(
-                        name: "FK_Telefono_Proveedor_idProveedor",
                         column: x => x.idProveedor,
                         principalTable: "Proveedor",
                         principalColumn: "idProveedor",
@@ -271,12 +272,6 @@ namespace BioRec___Empleados.Migrations
                 column: "idProveedor");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Telefono_idProveedor",
-                table: "Telefono",
-                column: "idProveedor",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Usuario_idCiudadDepPais",
                 table: "Usuario",
                 column: "idCiudadDepPais",
@@ -294,10 +289,10 @@ namespace BioRec___Empleados.Migrations
                 name: "Producto_Venta");
 
             migrationBuilder.DropTable(
-                name: "Proveedor_Producto");
+                name: "ProductoPublicado");
 
             migrationBuilder.DropTable(
-                name: "Telefono");
+                name: "Proveedor_Producto");
 
             migrationBuilder.DropTable(
                 name: "Venta");

@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Threading.Tasks;
-namespace BioRec___Empleados.Models
+
+namespace BioRec___Empleados.ViewModel
 {
     public class RegistroProveedorViewModel
     {
-
-        [Key]
-        public int idProveedor { get; set; }
-
+        [Required(ErrorMessage = "SE TE OLVIDÓ EL NOMBRE PVTO")]
         public String nombreProveedor { get; set; }
 
+        public String telefono { get; set; }
 
         public String tipoVia { get; set; }
 
@@ -33,7 +30,6 @@ namespace BioRec___Empleados.Models
         public String departamento { get; set; }
 
         public String pais { get; set; }
-
 
     }
 }

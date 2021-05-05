@@ -9,7 +9,6 @@ using BioRec___Empleados.Models;
 
 namespace BioRec___Empleados.Areas.Abastecimiento.Controllers
 {
-    [Area("Abastecimiento")]
     public class Proveedor_ProductoController : Controller
     {
         private readonly DatabaseContext _context;

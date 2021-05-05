@@ -96,6 +96,26 @@ namespace BioRec___Empleados.Migrations
                     b.ToTable("Producto");
                 });
 
+            modelBuilder.Entity("BioRec___Empleados.Models.ProductoPublicado", b =>
+                {
+                    b.Property<int>("id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("descripcion")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("nombre")
+                        .IsRequired()
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<double>("precio")
+                        .HasColumnType("double");
+
+                    b.HasKey("id");
+
+                    b.ToTable("ProductoPublicado");
+                });
+
             modelBuilder.Entity("BioRec___Empleados.Models.Producto_Venta", b =>
                 {
                     b.Property<int>("idProducto_Venta")
@@ -154,6 +174,10 @@ namespace BioRec___Empleados.Migrations
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<string>("telefono")
+                        .IsRequired()
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<string>("tipoInmueble")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
@@ -197,23 +221,6 @@ namespace BioRec___Empleados.Migrations
                     b.HasIndex("idProveedor");
 
                     b.ToTable("Proveedor_Producto");
-                });
-
-            modelBuilder.Entity("BioRec___Empleados.Models.Telefono", b =>
-                {
-                    b.Property<int>("idTelefono")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("idProveedor")
-                        .HasColumnType("int");
-
-                    b.HasKey("idTelefono");
-
-                    b.HasIndex("idProveedor")
-                        .IsUnique();
-
-                    b.ToTable("Telefono");
                 });
 
             modelBuilder.Entity("BioRec___Empleados.Models.Usuario", b =>
@@ -317,6 +324,15 @@ namespace BioRec___Empleados.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("BioRec___Empleados.Models.ProductoPublicado", b =>
+                {
+                    b.HasOne("BioRec___Empleados.Models.Producto", "Producto")
+                        .WithOne("ProductoPublicado")
+                        .HasForeignKey("BioRec___Empleados.Models.ProductoPublicado", "id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("BioRec___Empleados.Models.Producto_Venta", b =>
                 {
                     b.HasOne("BioRec___Empleados.Models.Producto", "Producto")
@@ -352,15 +368,6 @@ namespace BioRec___Empleados.Migrations
                     b.HasOne("BioRec___Empleados.Models.Proveedor", "Proveedor")
                         .WithMany("Proveedor_Producto")
                         .HasForeignKey("idProveedor")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("BioRec___Empleados.Models.Telefono", b =>
-                {
-                    b.HasOne("BioRec___Empleados.Models.Proveedor", "Proveedor")
-                        .WithOne("Telefono")
-                        .HasForeignKey("BioRec___Empleados.Models.Telefono", "idProveedor")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
