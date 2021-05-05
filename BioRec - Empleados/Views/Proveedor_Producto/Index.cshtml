@@ -1,33 +1,35 @@
 ﻿@model IEnumerable<BioRec___Empleados.Models.Proveedor_Producto>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Inventario";
 }
 
-<h1>Index</h1>
+<h1>Inventario</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Registra un nuevo inventario</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.fecha)
+                Fecha
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.cantidadTotal)
+                Cantidad total
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.costoPorUnidad)
+                Costo por unidad
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Producto)
+                Producto
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Proveedor)
+                Proveedor
             </th>
-            <th></th>
+            <th>
+                Opciones
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -49,9 +51,9 @@
                 @Html.DisplayFor(modelItem => item.Proveedor.nombreProveedor)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.idProveedor_Producto">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.idProveedor_Producto">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.idProveedor_Producto">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.idProveedor_Producto">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.idProveedor_Producto">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.idProveedor_Producto">Eliminar</a>
             </td>
         </tr>
 }
