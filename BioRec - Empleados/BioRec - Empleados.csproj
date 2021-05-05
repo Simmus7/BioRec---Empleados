@@ -8,6 +8,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20210421004111_Borrar Telefonos.cs" />
     <Compile Remove="Migrations\20210421004111_Borrar Telefonos.Designer.cs" />
+    <Compile Remove="Migrations\20210421125422_Actualizacion.cs" />
+    <Compile Remove="Migrations\20210421125422_Actualizacion.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
