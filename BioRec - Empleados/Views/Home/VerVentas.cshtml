@@ -1,0 +1,39 @@
+﻿@model IEnumerable<BioRec___Empleados.Models.Venta>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Fecha y Hora
+            </th>
+            <th>
+                Comprador
+            </th>
+            <th>
+                Productos
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fechaYHoraVenta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuario.nombre)
+                </td>
+                <td>
+                    @foreach (var item2 in item.Producto_Ventas)
+                    {
+                        <text>
+                            Nombre: @Html.DisplayFor(modelItem => item2.Producto.nombre) , Cantida: @Html.DisplayFor(modelItem => item2.cantidadProducto) , PrecioUnitario : @Html.DisplayFor(modelItem => item2.precioUnidad)
+                        </text>
+
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
